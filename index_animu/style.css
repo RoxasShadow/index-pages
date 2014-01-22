@@ -1,0 +1,50 @@
+body {
+  background-color      : #292C31;
+  background-repeat     : no-repeat;
+  background-attachment : fixed;
+  background-position   : bottom right;
+}
+
+a, a:hover, a:visited {
+  text-decoration : none;
+  color           : #292C31;
+}
+
+.links {
+  position  : relative;
+  left      : 50%;
+  top       : 50%;
+  transform : translate(-50%, -50%);
+}
+
+.nav-button {
+  width   : 150px;
+  height  : 150px;
+  position  : relative;
+  left      : 50%;
+}
+
+.down {
+  top       : 100%;
+  transform : translate(-50%, -100%);
+}
+.up {
+  top       : 0%;
+  transform : translate(-50%, -70%);
+}
+
+.logo {
+  width   : 200px;
+  height  : 200px;
+}
+
+.logo, .nav-button {
+  opacity : 0.4;
+}
+
+.logo:hover, .nav-button:hover {
+  opacity            : 1;
+  transition         : opacity .25s ease-in-out;
+  -moz-transition    : opacity .25s ease-in-out;
+  -webkit-transition : opacity .25s ease-in-out;
+}

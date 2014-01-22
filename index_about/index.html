@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Giovanni Capuano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Giovanni Capuano" />
+
+    <script src="res/jquery.min.js"></script>
+    <script src="res/jquery.easing.min.js"></script>
+    <script>
+      function getMailAddress(username, hostname, ext) {
+        return username + '@' + hostname + '.' + ext;
+      }
+
+      $(document).ready(function() {
+        $('.row-fluid').hide();
+        $('#cover').fadeIn('slow');
+
+        mail  = getMailAddress('webmaster', 'giovannicapuano', 'net');
+        $('#email').attr('href', 'mailto:' + mail);
+        $('#email').text(mail);
+
+        skype = getMailAddress('roxas.shadow', 'hotmail', 'it');
+        $('#skype').attr('href', 'mailto:' + skype);
+        $('#skype').text(skype);
+
+        $('ul > li > a').click(function() {
+          $('.row-fluid').fadeOut('slow');
+
+          $('.active').removeClass('active');
+
+          $('#' + this.href.split('#')[1]).fadeIn('slow').children().fadeIn('slow');
+          $(this).parent('li').addClass('active');
+
+          previous = this;
+        });
+
+        $('a[href^="#"]').on('click', function(e) {
+            e.preventDefault();
+
+            var target = this.hash,
+            $target = $(target);
+
+            $('html, body').stop().animate({
+              'scrollTop': $target.offset().top
+            }, 900, 'swing', function() {
+              window.location.hash = target;
+            });
+        });
+      });
+    </script>
+
+    <link href="res/bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+
+      @media (max-width: 979px) {
+        body {
+          padding-top: 0px;
+        }
+      }
+
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 20px 0 40px 0;
+      }
+
+      .cover {
+        margin-top: 40px;
+        text-align: center;
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('res/cover.jpg');
+        min-height: 300px;
+      }
+
+      h2.center {
+        text-align: center;
+      }
+
+      .navbar .navbar-inner {
+        padding: 0;
+      }
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        border-left: 1px solid rgba(255,255,255,.75);
+        border-right: 1px solid rgba(0,0,0,.1);
+      }
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+
+      div[class*='span'] {
+        background: none repeat scroll 0 0 #FFFFFF;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 5px;
+        min-height: 100%;
+        height: 100%;
+      }
+
+      div[class*='span'] > :first-child {
+        padding-top: 10px;
+      }
+
+      div[class*='span'] > :last-child {
+        padding-bottom: 10px;
+      }
+
+      .footer {
+        text-align: right;
+      }
+
+      .left  {
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="masthead">
+        <div class="navbar navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li class="active"><a href="#cover">Cover</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cover"></div>
+      <h2 class="center">Tanto poi muori.</h2>
+
+      <hr />
+
+      <div class="row-fluid" id="cover">
+        <div class="span12">
+          <p><b>We'</b></p>
+          <p><img src="res/lolwut.gif" /></p>
+        </div>
+      </div>
+
+      <div class="row-fluid" id="contacts">
+        <div class="span12">
+          <ul class="left">
+            <li>Github:   <a href="https://github.com/RoxasShadow?tab=repositories">https://github.com/RoxasShadow?tab=repositories</a></li>
+            <li>Email:    <a id="email"></a></li>
+            <li>Skype:    <a id="skype"></a></li>
+            <li>Blog:     <a href="http://roxasshadow.tumblr.com">http://roxasshadow.tumblr.com</a></li>
+            <li>Twitter:  <a href="https://twitter.com/GiovanniCapuano">@GiovanniCapuano</a></li>
+            <li>Facebook: <a href="https://www.facebook.com/roxasshadow">https://www.facebook.com/roxasshadow</a></li>
+            <li>Youtube:  <a href="http://www.youtube.com/user/RoxasShadowRS/videos">http://www.youtube.com/user/RoxasShadowRS/videos</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row-fluid" id="projects">
+        <br /><br />
+        <br /><br />
+
+      <div class="row-fluid">
+        <div class="span4">
+          <h2>Smogon</h2>
+          <p>Unofficial API to get (Poké|Ability|Item|Move|Moveset)dex from Smogon.</p>
+          <p>On top of this gem is built the IRC bot <a href="https://github.com/RoxasShadow/Botemon">Botémon</a></p>
+          <p><a class="btn" href="https://github.com/RoxasShadow/Smogon" target="_blank">View on Github &raquo;</a></p>
+        </div>
+
+        <div class="span4">
+          <h2>Quotone</h2>
+          <p>Quotone allows you to share with the world your favorite quotes from novels, movies, anime, manga, comics, videogames and so on in a completely anonimous way without any type of registration.</p>
+          <p>
+            <span class="btn-group">
+              <a class="btn" href="https://github.com/RoxasShadow/Smogon" target="_blank">View on Github &raquo;</a>
+              <a class="btn" href="http://www.quotone.unsigned.it" target="_blank">View on the web &raquo;</a>
+            </span>
+          </p>
+       </div>
+
+        <div class="span4">
+          <h2>LaCumparola</h2>
+          <p>Template made with HTML5, CSS3 and Javascript based on a modified versions of reveal.js with sugar, blog engine and many many plugins.</p>
+          <p>
+            <span class="btn-group">
+              <a class="btn" href="https://github.com/RoxasShadow/LaCumparola" target="_blank">View on Github &raquo;</a>
+              <a class="btn" href="http://omnivium.it" target="_blank">View on the web &raquo;</a>
+            </span>
+          </p>
+       </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span4">
+          <h2>Dumper</h2>
+          <p>Image dumper with profiles.</p>
+            <p>It's a modular script which allows you to download all the images of a page or a gallery.</p>
+            <p><a class="btn" href="https://github.com/RoxasShadow/Dumper" target="_blank">View on Github &raquo;</a></p>
+          </div>
+
+          <div class="span4">
+            <h2>Vaporizza</h2>
+            <p>It's a pretty Windows Gadget which displays and allows to run a list of your (Steam) games on your desktop. Additionally makes it beautiful!</p>
+            <p><a class="btn" href="https://github.com/RoxasShadow/Vaporizza" target="_blank">View on Github &raquo;</a></p>
+         </div>
+
+          <div class="span4">
+            <h2>Prometheus</h2>
+            <p>It's part of a project used for my high-school final exam.</p>
+            <p>Prometheus allows you to make an alarm with Arduino unlockabile through gesture.</p>
+            <p>
+              <span class="btn-group">
+                <a class="btn" href="https://github.com/RoxasShadow/Prometheus" target="_blank">View on Github &raquo;</a>
+                <a class="btn" href="#" onClick="Download=window.open('http://www.giovannicapuano.net/stats/download.php?id=24','Download','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=auto,resizable=yes,width=400,height=200')">Download the thesis &raquo;</a>
+              </span>
+            </p>
+         </div>
+        </div>
+
+        <div class="row-fluid">
+          <div class="span4">
+            <h2>MyGameList</h2>
+            <p>It's a clone of MyAnimeList.net, but for games.</p>
+            <p>After you are logged in, you can make a list with your games, giving it a vote, a review, percentage of completion, etc.</p>
+            <p><a class="btn" href="https://github.com/RoxasShadow/MyGameList" target="_blank">View on Github &raquo;</a></p>
+          </div>
+
+          <div class="span4">
+            <h2>The Happy Guy</h2>
+            <p>A small but nice 3D game/demo created testing the Unity3d game engine.</p>
+            <p><a class="btn" href="https://github.com/RoxasShadow/The-Happy-Guy" target="_blank">View on Github &raquo;</a></p>
+         </div>
+
+          <div class="span4">
+            <h2>Sottaceto</h2>
+            <p>It's a game engine to make visual novels for Android in a simple way that doesn't require any programmation skill.</p>
+            <p><a class="btn" href="https://github.com/RoxasShadow/Sottaceto" target="_blank">View on Github &raquo;</a></p>
+         </div>
+        </div>
+
+        <div class="row-fluid">
+          <div class="span4">
+            <h2>FFetcher</h2>
+            <p>It's a script that allows you to copy in your PC your forum hosted on Forumcommunity or Forumfree.</p>
+            <p><a class="btn" href="https://github.com/RoxasShadow/FFetcher" target="_blank">View on Github &raquo;</a></p>
+          </div>
+
+          <div class="span4">
+            <h2>GjBoard</h2>
+            <p>An advanced clipboard manager with portable and standalone database.</p>
+            <p><a class="btn" href="https://github.com/RoxasShadow/GjBoard" target="_blank">View on Github &raquo;</a></p>
+          </div>
+
+          <div class="span4">
+            <h2>JaqaacGUI</h2>
+            <p>It's a GUI for qaac, an audio encoder by Apple.</p>
+            <p><a class="btn" href="https://github.com/RoxasShadow/JaqaacGUI" target="_blank">View on Github &raquo;</a></p>
+         </div>
+        </div>
+
+        <div class="row-fluid">
+          <div class="span4">
+            <h2>rs-sendpkm-bw</h2>
+            <p>An improvement of sendpkm.py that allows you to make your home-made GTS server for Pokémon games.</p>
+            <p><a class="btn" href="https://github.com/RoxasShadow/The-Happy-Guy" target="_blank">View on Github &raquo;</a></p>
+         </div>
+
+          <div class="span4">
+            <h2>Ocarina Project</h2>
+            <p>Ocarina is a flexible and light CMS built in PHP5 and MySQL, with OOP, a rendering and plugin engine, which divides the logic and the graphic.</p>
+            <p>
+              <span class="btn-group">
+                <a class="btn" href="https://github.com/RoxasShadow/OcarinaProject" target="_blank">View on Github &raquo;</a>
+                <a class="btn" href="http://www.giovannicapuano.net/ocarina/" target="_blank">View the website &raquo;</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="span4">
+            <h2>WAPT &amp; WSC</h2>
+            <p>WAPT (Windows Advanced Packaging Tool) is a packaging tool for Windows to download software at the Linux-way. WSC (Windows Software Center) is its front-end</p>
+            <p>
+              <a class="btn" href="https://github.com/RoxasShadow/WAPT" target="_blank">View WAPT on Github &raquo;</a>
+              <a class="btn" href="https://github.com/RoxasShadow/WSC" target="_blank">View WSC on Github &raquo;</a>
+            </p>
+         </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>&copy; 2013 Giovanni Capuano</p>
+      </div>
+
+    </div>
+
+  </body>
+</html>

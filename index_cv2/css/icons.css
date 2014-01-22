@@ -1,0 +1,39 @@
+[class^="icon-"], [class*=" icon-"] {
+  background-position: center center;
+  background-repeat  : no-repeat;
+  height             : 32px;
+  line-height        : 21px;
+  width              : 32px;
+  vertical-align     : bottom;
+  margin-right       : 4px;
+  padding-left       : 34px;
+}
+
+.navbar-brand {
+  padding: 2px;
+  width     : 32px;
+  height    : 32px;
+  background: url('../img.icon.png');
+}
+
+.navbar [class^="icon-"], .navbar [class*=" icon-"] {
+  padding      : 34px;
+  padding-right: 10px;
+}
+
+.navbar-header [class^="icon-"], .navbar-header [class*=" icon-"] {
+  padding-top: 6px;
+}
+
+.icon-game     { background-image: url("../img/icons/gamepad.png" ); }
+.icon-text     { background-image: url("../img/icons/notepad.png" ); }
+.icon-loc      { background-image: url("../img/icons/pin.png"     ); }
+.icon-music    { background-image: url("../img/icons/sound.png"   ); }
+.icon-tv       { background-image: url("../img/icons/tv.png"      ); }
+
+.icon-mail     { background-image: url("../img/icons/email.png"   ); }
+.icon-github   { background-image: url("../img/icons/github.png"  ); }
+.icon-facebook { background-image: url("../img/icons/facebook.png"); }
+.icon-twitter  { background-image: url("../img/icons/twitter.png" ); }
+.icon-linkedin { background-image: url("../img/icons/linkedin.png"); }
+.icon-logo     { background-image: url("../img/icon.png"          ); }
